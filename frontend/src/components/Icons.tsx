@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function GithubIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
     <svg 

@@ -2,16 +2,17 @@ import smtplib
 from email.message import EmailMessage
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 CORS(app)
 
-# ==========================================
-# CONFIGURAÇÕES DE EMAIL (Edite aqui)
-# ==========================================
-EMAIL_DESTINO = "brenogallo15@gmail.com"
-# Cole a senha de aplicativo de 16 dígitos gerada no Google (sem espaços)
-SENHA_DO_EMAIL = "gtwo idhi djsb mdlr" 
+load_dotenv()
+
+# Puxa os dados de forma segura
+EMAIL_USUARIO = os.getenv('EMAIL_USER')
+SENHA_EMAIL = os.getenv('EMAIL_PASS')
 
 @app.route('/api/status', methods=['GET'])
 def status():

@@ -1,0 +1,22 @@
+# Senhas e Variáveis de Ambiente (O MAIS IMPORTANTE)
+.env
+.env.*
+*.pem
+
+# Dependências Python e Ambientes Virtuais
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+
+# Dependências Node/React (Frontend)
+node_modules/
+dist/
+build/
+.npm/
+
+# Logs e arquivos do sistema operacional
+*.log
+.DS_Store
+Thumbs.db

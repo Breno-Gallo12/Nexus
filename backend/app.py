@@ -14,6 +14,8 @@ load_dotenv()
 EMAIL_USUARIO = os.getenv('EMAIL_USER')
 SENHA_EMAIL = os.getenv('EMAIL_PASS')
 
+EMAIL_DESTINO = os.getenv('EMAIL_DESTINO')
+
 @app.route('/api/status', methods=['GET'])
 def status():
     return jsonify({"status": "API online", "message": "Backend rodando perfeitamente!"})

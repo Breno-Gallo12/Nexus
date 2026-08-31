@@ -22,7 +22,7 @@ export function Contato() {
     setStatus('loading');
 
     try {
-      const response = await fetch('http://localhost:5000/api/contato', {
+      const response = await fetch('https://nexus-nak3.onrender.com/api/contato', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

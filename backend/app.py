@@ -53,8 +53,9 @@ def receber_contato():
     # Envio do E-mail via SMTP do Gmail
     try:
         # Conecta ao servidor do Gmail usando SSL (porta 465)
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-            smtp.login(EMAIL_DESTINO, SENHA_DO_EMAIL)
+        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+            smtp.starttls() # Isso liga a criptografia de segurança obrigatoriamente
+            smtp.login(EMAIL_USER, EMAIL_PASS)
             smtp.send_message(msg)
             
         print(f"Sucesso: Email de {nome} enviado!")

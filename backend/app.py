@@ -42,7 +42,13 @@ def receber_contato():
         if resposta.status_code in [200, 201]:
             return jsonify({"mensagem": "Mensagem enviada com sucesso!"}), 200
         else:
-            return jsonify({"erro": "Erro no servidor de e-mail."}), 500
+            # Captura a reclamação exata do Resend
+            erro_resend = resposta.json()
+            print("ERRO DO RESEND:", erro_resend) # Para aparecer nos logs do Render
+            
+            # Manda o motivo real para aparecer lá na caixinha vermelha da Vercel
+            motivo = erro_resend.get('message', 'Erro desconhecido')
+            return jsonify({"erro": f"Erro Resend: {motivo}"}), 500
 
     except Exception as e:
         return jsonify({"erro": str(e)}), 500

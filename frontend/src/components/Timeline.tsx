@@ -14,8 +14,8 @@ export function Timeline() {
     },
     {
       ano: '2026',
-      titulo: 'Portfólio Profissional',
-      descricao: 'Criação do portfólio profissional e aprofundamento prático em desenvolvimento de software.',
+      titulo: 'Portfólio Profissional e Freelances',
+      descricao: 'Criação do portfólio profissional e aprofundamento prático em desenvolvimento de software, e desenvolvimento de freelances.',
     },
     {
       ano: 'Atualidade',
